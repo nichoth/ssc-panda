@@ -22,7 +22,7 @@
     "build-js": "browserify -p esmify -p common-shakeify -t unassertify -t uglifyify --debug src/index.js > public/bundle.js",
     "test-browser": "npm run build && concurrently --kill-others \"budo src/index.js:bundle.js --dir=public/ --port=9966 --live --pushstate -- -p esmify -dv\" \"cypress open\"",
     "test": "tape test/*.js | tap-spec",
-    "deps": "depcheck --skip-missing=true --ignores=\"cypress,esmify,uglifyify,depcheck,eslint,eslint-config-minlint,public/*\"",
+    "deps": "depcheck --skip-missing=true --ignores=\"cypress,esmify,uglifyify,depcheck,public/*\"",
     "preversion": "npm run deps",
     "postversion": "git push && git push --tags && npm publish"
   },
