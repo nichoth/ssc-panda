@@ -20,7 +20,6 @@
     "build-sass": "sass src/style/main.scss public/style.css",
     "watch-sass": "sass --watch src/style/main.scss public/style.css",
     "build-js": "browserify -p esmify -p common-shakeify -t unassertify -t uglifyify --debug src/index.js > public/bundle.js",
-    "watch-js": "watchify -t uglifyify --debug -p esmify src/index.js -o public/bundle.js",
     "test-browser": "npm run build && concurrently --kill-others \"budo src/index.js:bundle.js --dir=public/ --port=9966 --live --pushstate -- -p esmify -dv\" \"cypress open\"",
     "test": "tape test/*.js | tap-spec",
     "lint": "eslint .",
@@ -33,9 +32,13 @@
   "devDependencies": {
     "browserify": "^17.0.0",
     "budo": "^11.6.4",
+    "common-shakeify": "^0.6.2",
     "concurrently": "^6.2.0",
     "depcheck": "^1.4.2",
+    "esmify": "^2.1.1",
     "sass": "^1.35.2",
-    "tape": "^5.2.2"
+    "tape": "^5.2.2",
+    "uglifyify": "^5.0.2",
+    "unassertify": "^2.1.1"
   }
 }
