@@ -27,7 +27,9 @@
     "postversion": "git push && git push --tags && npm publish"
   },
   "dependencies": {
-    "p2panda-js": "^0.1.0"
+    "htm": "^3.0.4",
+    "p2panda-js": "^0.1.0",
+    "preact": "^10.5.14"
   },
   "devDependencies": {
     "browserify": "^17.0.0",
